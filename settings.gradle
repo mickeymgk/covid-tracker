@@ -1,0 +1,2 @@
+rootProject.name='covid19tracker'
+include ':app', ':nativetemplates'

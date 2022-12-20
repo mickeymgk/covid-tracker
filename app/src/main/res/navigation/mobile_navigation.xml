@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.phonics.covid19tracker.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/nav_countries"
+        android:name="com.phonics.covid19tracker.ui.countries.CountriesFragment"
+        android:label="@string/menu_all_countries"
+        tools:layout="@layout/fragment_countries">
+        <action
+            android:id="@+id/action_nav_countries_to_nav_detail"
+            app:destination="@id/nav_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_saved"
+        android:name="com.phonics.covid19tracker.ui.saved.SavedFragment"
+        android:label="@string/menu_saved"
+        tools:layout="@layout/fragment_countries" >
+        <action
+            android:id="@+id/action_nav_saved_to_nav_select"
+            app:destination="@id/nav_select" />
+        <action
+            android:id="@+id/action_nav_saved_to_nav_detail"
+            app:destination="@id/nav_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_select"
+        android:name="com.phonics.covid19tracker.ui.select.SelectFragment"
+        android:label="@string/menu_select"
+        tools:layout="@layout/fragment_countries" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.phonics.covid19tracker.ui.settings.SettingsFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.phonics.covid19tracker.ui.about.AboutFragment"
+        android:label="@string/action_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_detail"
+        android:name="com.phonics.covid19tracker.ui.detail.DetailFragment"
+        android:label="@string/country_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="code"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>

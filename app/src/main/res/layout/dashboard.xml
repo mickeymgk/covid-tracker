@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:visibility="gone"
+    tools:visibility="visible"
+    android:id="@+id/root_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/c1"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="@dimen/nav_header_vertical_spacing"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bg_cases"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="center"
+                android:src="@drawable/circle"
+                android:tint="@color/lightOrange"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_cases"
+                app:layout_constraintEnd_toEndOf="@+id/icon_cases"
+                app:layout_constraintStart_toStartOf="@+id/icon_cases"
+                app:layout_constraintTop_toTopOf="@+id/icon_cases" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_cases"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:scaleType="center"
+                android:tint="@color/orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_confirmed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cases"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/eczar_medium"
+                tools:text="35000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="?colorOnSurface"
+                app:layout_constraintEnd_toStartOf="@+id/d1"
+                app:layout_constraintStart_toEndOf="@+id/icon_cases"
+                app:layout_constraintTop_toTopOf="@+id/icon_cases"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/total_cases"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/tilde_bold"
+                android:text="@string/total_confirmed_cases"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_cases"
+                app:layout_constraintEnd_toStartOf="@+id/d1"
+                app:layout_constraintStart_toEndOf="@+id/icon_cases"
+                app:layout_constraintTop_toBottomOf="@+id/cases" />
+
+            <View
+                android:id="@+id/d1"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--     ______________________________________________________________________       -->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bg_cases_today"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="center"
+                android:src="@drawable/circle"
+                android:tint="@color/lightOrange"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_cases_today"
+                app:layout_constraintEnd_toEndOf="@+id/icon_cases_today"
+                app:layout_constraintStart_toStartOf="@+id/icon_cases_today"
+                app:layout_constraintTop_toTopOf="@+id/icon_cases_today" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_cases_today"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="center"
+                android:tint="@color/orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/d1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_today" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cases_today"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/eczar_medium"
+                tools:text="35000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="?colorOnSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bg_cases_today"
+                app:layout_constraintTop_toTopOf="@+id/bg_cases_today" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/t_cases_today"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/tilde_bold"
+                android:text="@string/total_cases_today"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/cases_today"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bg_cases_today"
+                app:layout_constraintTop_toBottomOf="@+id/bg_cases_today" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/c2"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="@dimen/nav_header_vertical_spacing"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/i2"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="center"
+                android:src="@drawable/circle"
+                android:tint="@color/lightRed"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_death"
+                app:layout_constraintEnd_toEndOf="@+id/icon_death"
+                app:layout_constraintStart_toStartOf="@+id/icon_death"
+                app:layout_constraintTop_toTopOf="@+id/icon_death" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_death"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:scaleType="center"
+                android:tint="@color/red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_death" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/death"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/eczar_medium"
+                tools:text="35000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="?colorOnSurface"
+                app:layout_constraintEnd_toStartOf="@+id/d2"
+                app:layout_constraintStart_toEndOf="@+id/i2"
+                app:layout_constraintTop_toTopOf="@+id/i2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/t2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/tilde_bold"
+                android:text="@string/total_deaths"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/i2"
+                app:layout_constraintEnd_toStartOf="@+id/d2"
+                app:layout_constraintStart_toEndOf="@+id/i2"
+                app:layout_constraintTop_toBottomOf="@+id/death" />
+
+            <View
+                android:id="@+id/d2"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--     ______________________________________________________________________       -->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bg_today_death"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="center"
+                android:src="@drawable/circle"
+                android:tint="@color/lightRed"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_today"
+                app:layout_constraintEnd_toEndOf="@+id/icon_today"
+                app:layout_constraintStart_toStartOf="@+id/icon_today"
+                app:layout_constraintTop_toTopOf="@+id/icon_today" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_today"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="center"
+                android:tint="@color/red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/d2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_today" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/death_today"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/eczar_medium"
+                tools:text="35000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="?colorOnSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bg_today_death"
+                app:layout_constraintTop_toTopOf="@+id/bg_today_death" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/t_d_today"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/tilde_bold"
+                android:text="@string/total_deaths_today"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/bg_today_death"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bg_today_death"
+                app:layout_constraintTop_toBottomOf="@+id/death_today" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/c3"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="@dimen/nav_header_vertical_spacing"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bg_recovered"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="center"
+                android:src="@drawable/circle"
+                android:tint="@color/lightGreen"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_recovered"
+                app:layout_constraintEnd_toEndOf="@+id/icon_recovered"
+                app:layout_constraintStart_toStartOf="@+id/icon_recovered"
+                app:layout_constraintTop_toTopOf="@+id/icon_recovered" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_recovered"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:scaleType="center"
+                android:tint="@color/green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_recovered" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/recovery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/eczar_medium"
+                tools:text="35000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="?colorOnSurface"
+                app:layout_constraintEnd_toStartOf="@+id/d3"
+                app:layout_constraintStart_toEndOf="@+id/icon_recovered"
+                app:layout_constraintTop_toTopOf="@+id/icon_recovered" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/total_recovery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/tilde_bold"
+                android:text="@string/total_recovered"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_recovered"
+                app:layout_constraintEnd_toStartOf="@+id/d3"
+                app:layout_constraintStart_toEndOf="@+id/icon_recovered"
+                app:layout_constraintTop_toBottomOf="@+id/recovery" />
+
+            <View
+                android:id="@+id/d3"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--     ______________________________________________________________________       -->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bg_unresolved"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="center"
+                android:src="@drawable/circle"
+                android:tint="@color/lightOrange"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_unresolved"
+                app:layout_constraintEnd_toEndOf="@+id/icon_unresolved"
+                app:layout_constraintStart_toStartOf="@+id/icon_unresolved"
+                app:layout_constraintTop_toTopOf="@+id/icon_unresolved" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_unresolved"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="center"
+                android:tint="@color/orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/d3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_unresolved" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/unresolved"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/eczar_medium"
+                tools:text="35000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="?colorOnSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bg_unresolved"
+                app:layout_constraintTop_toTopOf="@+id/bg_unresolved" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/t_recovery_today"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/tilde_bold"
+                android:text="@string/total_unresolved"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/bg_unresolved"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bg_unresolved"
+                app:layout_constraintTop_toBottomOf="@+id/unresolved" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/c4"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="@dimen/nav_header_vertical_spacing"
+        android:layout_marginBottom="@dimen/nav_header_vertical_spacing"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bg_active"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="center"
+                android:src="@drawable/circle"
+                android:tint="@color/lightOrange"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_active"
+                app:layout_constraintEnd_toEndOf="@+id/icon_active"
+                app:layout_constraintStart_toStartOf="@+id/icon_active"
+                app:layout_constraintTop_toTopOf="@+id/icon_active" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_active"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:scaleType="center"
+                android:tint="@color/orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_confirmed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/active"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/eczar_medium"
+                tools:text="35000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="?colorOnSurface"
+                app:layout_constraintEnd_toStartOf="@+id/d4"
+                app:layout_constraintStart_toEndOf="@+id/icon_active"
+                app:layout_constraintTop_toTopOf="@+id/icon_active" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/total_active"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/tilde_bold"
+                android:text="@string/total_active"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_active"
+                app:layout_constraintEnd_toStartOf="@+id/d4"
+                app:layout_constraintStart_toEndOf="@+id/icon_active"
+                app:layout_constraintTop_toBottomOf="@+id/active" />
+
+            <View
+                android:id="@+id/d4"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--     ______________________________________________________________________       -->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bg_serious"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="center"
+                android:src="@drawable/circle"
+                android:tint="@color/lightRed"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_serious"
+                app:layout_constraintEnd_toEndOf="@+id/icon_serious"
+                app:layout_constraintStart_toStartOf="@+id/icon_serious"
+                app:layout_constraintTop_toTopOf="@+id/icon_serious" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_serious"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="center"
+                android:tint="@color/red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/d4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_serious" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/serious"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/eczar_medium"
+                tools:text="35000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="?colorOnSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bg_serious"
+                app:layout_constraintTop_toTopOf="@+id/bg_serious" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+
+                android:id="@+id/t_serious"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/tilde_bold"
+                android:text="@string/total_serious"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/serious"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bg_serious"
+                app:layout_constraintTop_toBottomOf="@+id/bg_serious" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/notice"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/warning"
+        android:fontFamily="@font/tilde_bold"/>
+
+</LinearLayout>

@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\Mickey\\keystores\\covid.jks')
+            storePassword 'REPLACE_WITH_YOUR_PASSWORD'
+            keyAlias = 'REPLACE_WITH_YOUR_PASSWORD'
+            keyPassword 'REPLACE_WITH_YOUR_PASSWORD'
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion "30.0.0 rc1"
+
+    defaultConfig {
+        applicationId "com.phonics.covid19tracker"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "0.0.1-beta"
+        vectorDrawables.useSupportLibrary true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        prod {
+            res {
+                srcDirs 'src/prod/res', 'src/prod/res/'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            debuggable true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+			signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//    androidx and jet-pack
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.1'
+    implementation 'androidx.navigation:navigation-ui:2.2.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+//    SQLite and future caching
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
+//    networking
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+//    testing
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
